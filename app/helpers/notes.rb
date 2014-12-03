@@ -69,3 +69,75 @@ a unique ID created by rails ensures that the image gets uploaded every time rat
 
 bootsrap also has a special meaning for btn, btn-lg and btn-primary, as well as center jumbotron
 
+bootstrap is created in Less CSS language, but rails supports the similar Sass language so the bootstrap-sass download converts bootstrap into sass.
+
+to link to css stylesheets, we use: touch app/assets/stylesheets/custom.css.scss
+css tells us it's a css file, and scss stands for "Sassy CSS"
+
+bundle install installs the dependancies that you've indicated in your Gemfile.
+
+elements we tag with center will be centered
+
+a partial is a file that connects blocks of code to an additional site, like a shim.
+
+Asset Pipeline:
+ - Asset Directories
+ - Manifest Files
+ - Preprocessor Engines
+
+Asset Directories
+    app/assets: assets specific to the present application
+    lib/assets: assets for libraries written by your dev team
+    vendor/assets: assets from third-party vendors 
+Each has subdirectories.  app/assets might have /javascripts, /images, /stylesheets
+
+Minfest Files
+Tells rails how to put the parts of the files together to a single file with the sprocket gem.
+
+manifest file for app-specific CSS: app/assets/stylesheets/application.css
+ *= require_tree .
+ *= require_self
+
+Preprocessor Engines
+File extensions such as .scss, .coffee and .erb tell rails what engine to run.  These are most common.
+You can chain them, so that blah.js.erb.coffee would run through the coffeescript engine first, then the embedded ruby engine.
+
+Sass CSS allows us to improve on CSS. It offers: nesting, variables and mixins.
+.scss only adds features, but doesn't take away any functionality of CSS. 
+
+Nesting: 
+Unnested:
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+Nested:
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
