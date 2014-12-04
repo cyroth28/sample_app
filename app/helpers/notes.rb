@@ -105,39 +105,32 @@ You can chain them, so that blah.js.erb.coffee would run through the coffeescrip
 Sass CSS allows us to improve on CSS. It offers: nesting, variables and mixins.
 .scss only adds features, but doesn't take away any functionality of CSS. 
 
-Nesting: 
-Unnested:
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
+Persistence:
+When something doesn't have persistence, it doesn't exist after we leave the console.
 
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
+Generating a controller: rails generate controller <Name> new
+Generating a moedel: rails generate model <Name> new
+this is the first step to creating the files within your application.
+Generating also creates a migration folder which allows us to change the database incrementally.
 
-Nested:
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
+t.timestamps is a method that creates two other timestamps called created_at and updated_at
+
+user.save is ncessary to commit changes to the database and remain persistent
+user.reload is a way to clear changes (without being saved)
+user.update_attributes(name: "The Man!")  updates particular attributes of the user
+
+by comparing hashed values instead of raw passwords, we don't have to store the passwords themselves. So our database will be more secure.
+
+once you create a migration (like an attribute has secure password) with the rails generate command, you have to migrate the database:
+bundle exec rake db:migrate
+
+
+
+
+
+
+
+
 
 
 
